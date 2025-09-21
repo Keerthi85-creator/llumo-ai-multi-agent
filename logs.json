@@ -1,0 +1,186 @@
+[
+  {
+    "id": "5e732532",
+    "timestamp": "2025-09-21T12:36:19.616797Z",
+    "stage": "plan",
+    "details": [
+      "retriever"
+    ]
+  },
+  {
+    "id": "5e732532",
+    "stage": "tool_calls",
+    "details": [
+      {
+        "tool": "retriever",
+        "input": "What is LLUMO AI's core value proposition?",
+        "output_count": 3
+      }
+    ]
+  },
+  {
+    "id": "5e732532",
+    "stage": "critic",
+    "details": {
+      "ok": true
+    }
+  },
+  {
+    "id": "5e732532",
+    "stage": "final",
+    "details": {
+      "id": "5e732532",
+      "timestamp": "2025-09-21T12:36:19.616797Z",
+      "query": "What is LLUMO AI's core value proposition?",
+      "final_output": "LLUMO AI is an evaluation-first reliability layer for LLM apps. It focuses on automated scoring, actionable insights, and cost savings via prompt compression\u2014helping teams ship trustworthy AI."
+    }
+  },
+  {
+    "id": "67ea44bc",
+    "timestamp": "2025-09-21T12:36:31.362178Z",
+    "stage": "plan",
+    "details": [
+      "retriever"
+    ]
+  },
+  {
+    "id": "67ea44bc",
+    "stage": "tool_calls",
+    "details": [
+      {
+        "tool": "retriever",
+        "input": "What does the LLUMO Debugger show that helps isolate failures?",
+        "output_count": 2
+      }
+    ]
+  },
+  {
+    "id": "67ea44bc",
+    "stage": "critic",
+    "details": {
+      "ok": true
+    }
+  },
+  {
+    "id": "67ea44bc",
+    "stage": "final",
+    "details": {
+      "id": "67ea44bc",
+      "timestamp": "2025-09-21T12:36:31.362178Z",
+      "query": "What does the LLUMO Debugger show that helps isolate failures?",
+      "final_output": "LLUMO\u2019s Debugger shows run-level logs, stepwise tool traces, and a flow graph to isolate failure points such as tool selection errors or context mismatch."
+    }
+  },
+  {
+    "id": "164aa570",
+    "timestamp": "2025-09-21T12:36:42.984403Z",
+    "stage": "plan",
+    "details": [
+      "policylookup"
+    ]
+  },
+  {
+    "id": "164aa570",
+    "stage": "tool_calls",
+    "details": [
+      {
+        "tool": "policylookup",
+        "input": "What are the official working hours and overtime rules?",
+        "output": [
+          "Company Policy \u2013 Working Hours"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "164aa570",
+    "stage": "critic",
+    "details": {
+      "ok": true
+    }
+  },
+  {
+    "id": "164aa570",
+    "stage": "final",
+    "details": {
+      "id": "164aa570",
+      "timestamp": "2025-09-21T12:36:42.984403Z",
+      "query": "What are the official working hours and overtime rules?",
+      "final_output": "Standard working hours are 10:00 to 18:30 IST, Monday to Friday. Flexible timings are allowed with manager approval."
+    }
+  },
+  {
+    "id": "e31383f3",
+    "timestamp": "2025-09-21T12:36:55.664751Z",
+    "stage": "plan",
+    "details": [
+      "policylookup"
+    ]
+  },
+  {
+    "id": "e31383f3",
+    "stage": "tool_calls",
+    "details": [
+      {
+        "tool": "policylookup",
+        "input": "How do reimbursements work and how long do they take after approval?",
+        "output": [
+          "Finance FAQ \u2013 Reimbursements"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "e31383f3",
+    "stage": "critic",
+    "details": {
+      "ok": true
+    }
+  },
+  {
+    "id": "e31383f3",
+    "stage": "final",
+    "details": {
+      "id": "e31383f3",
+      "timestamp": "2025-09-21T12:36:55.664751Z",
+      "query": "How do reimbursements work and how long do they take after approval?",
+      "final_output": "Submit reimbursements within 30 days. Keep original receipts. Typical settlement time is 7 business days after approval."
+    }
+  },
+  {
+    "id": "b6d8a91f",
+    "timestamp": "2025-09-21T12:37:18.115765Z",
+    "stage": "plan",
+    "details": [
+      "calculator"
+    ]
+  },
+  {
+    "id": "b6d8a91f",
+    "stage": "tool_calls",
+    "details": [
+      {
+        "tool": "calculator",
+        "input": "Compute: (125 * 6) - 50 and 15% of 640",
+        "output": "(125 * 6) - 50 = 700; 15% of 640 = 96"
+      }
+    ]
+  },
+  {
+    "id": "b6d8a91f",
+    "stage": "critic",
+    "details": {
+      "ok": true
+    }
+  },
+  {
+    "id": "b6d8a91f",
+    "stage": "final",
+    "details": {
+      "id": "b6d8a91f",
+      "timestamp": "2025-09-21T12:37:18.115765Z",
+      "query": "Compute: (125 * 6) - 50 and 15% of 640",
+      "final_output": "(125 * 6) - 50 = 700; 15% of 640 = 96"
+    }
+  }
+]
