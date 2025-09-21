@@ -1,9 +1,9 @@
 import json, time, hashlib, re
-from datetime import datetime
+from datetime import datetime, UTC
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 
 from tools.retriever import Retriever, load_kb_from_file
-from tools.calculator import safe_eval_expr
+from tools.calculator import parse_and_compute
 from tools.policy_lookup import PolicyLookup
 from tools.string_tools import StringTools
 
@@ -62,7 +62,7 @@ class Agent:
 
     def handle(self, query):
         run_id = hashlib.sha1(query.encode()).hexdigest()[:8]
-        ts = datetime.utcnow().isoformat() + 'Z'
+        ts = datetime.now(UTC).isoformat().replace("+00:00", "Z")
         plan_steps = self.plan(query)
         self.logs.append({'id': run_id, 'timestamp': ts, 'stage': 'plan', 'details': plan_steps})
         final_answer = None
@@ -70,7 +70,7 @@ class Agent:
 
         for step in plan_steps:
             if step == 'calculator':
-                def calc_fn(q): return safe_eval_expr(q)
+                def calc_fn(q): return parse_and_compute(q)
                 res = self.run_tool_with_retries('calculator', calc_fn, query)
                 tool_calls.append({'tool': 'calculator', 'input': query, 'output': str(res['result'])})
                 final_answer = str(res['result'])
@@ -105,15 +105,19 @@ if __name__ == '__main__':
     pol = PolicyLookup(kb)
     agent = Agent(retr, pol)
 
-    # Test queries (from Test_Queries.pdf)
-    queries = [
-        #"What is LLUMO AI's core value proposition?",
-        #"What does the LLUMO Debugger show that helps isolate failures?",
-        "What are the official working hours and overtime rules?",
-        #"How do reimbursements work and how long do they take after approval?",
-        #"Compute: (125 * 6) - 50 and 15% of 640"
-    ]
+    print("LLUMO Agent is ready! Type your query.")
+    print("Type 'exit' or 'bye' to quit.\n")
 
-    for q in queries:
-        print(agent.handle(q))
-    agent.dump_log
+    while True:
+        q = input(">> ").strip()
+        if q.lower() in ["exit", "bye"]:
+            print("Goodbye 👋")
+            break
+        if not q:
+            continue
+        result = agent.handle(q)
+        print("Answer:", result["final_output"])
+        print()
+
+    # Save logs after session ends
+    agent.dump_logs()
