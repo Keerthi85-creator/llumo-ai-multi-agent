@@ -1,0 +1,14 @@
+[DOC-1] Title: LLUMO AI – Core Value
+Text: LLUMO AI is an evaluation-first reliability layer for LLM apps. It focuses on automated scoring, actionable insights, and cost savings via prompt compression—helping teams ship trustworthy AI.
+
+[DOC-2] Title: LLUMO AI – Debugger
+Text: LLUMO’s Debugger shows run-level logs, stepwise tool traces, and a flow graph to isolate failure points such as tool selection errors or context mismatch.
+
+[DOC-3] Title: Company Policy – Working Hours
+Text: Standard working hours are 10:00 to 18:30 IST, Monday to Friday. Flexible timings are allowed with manager approval.
+
+[DOC-4] Title: Finance FAQ – Reimbursements
+Text: Submit reimbursements within 30 days. Keep original receipts. Typical settlement time is 7 business days after approval.
+
+[DOC-5] Title: Math Snippets
+Text: Examples: (125 * 6) - 50 = 700; 15% of 640 = 96; Average of [10, 20, 30, 40] = 25.
